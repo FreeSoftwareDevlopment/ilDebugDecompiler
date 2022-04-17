@@ -43,7 +43,7 @@ namespace compilerTools
                             String.Concat(
                                 "-- Modified by SharkDebug\n",
                                 module.IsMain ? "-- Running as: \"{0}\"\n" : "",
-                                $"-- Entering \"{method.Name}\" of \"{type.Name}\""
+                                $"-- Entering \"{method.Name}\" of \"{type.Namespace}::{type.Name}\""
                             )));
                         if (module.IsMain)
                         {
