@@ -39,11 +39,12 @@ namespace compilerTools
                         namespacess.Add($"${method.FullName}");
                         var fi = method.Body.Instructions.First();
                         var li = method.Body.Instructions.Last();
+                        string tp = method.IsPublic ? "public " :(method.IsPrivate?"private ":"");
                         ilProc.InsertBefore(fi, Instruction.Create(OpCodes.Ldstr,
                             String.Concat(
                                 "-- Modified by SharkDebug\n",
                                 module.IsMain ? "-- Running as: \"{0}\"\n" : "",
-                                $"-- Entering \"{method.Name}\" of \"{type.Namespace}::{type.Name}\""
+                                $"-- Entering {tp}\"{method.Name}\" of \"{type.Namespace}::{type.Name}\""
                             )));
                         if (module.IsMain)
                         {
