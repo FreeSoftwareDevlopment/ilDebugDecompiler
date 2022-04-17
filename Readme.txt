@@ -1,0 +1,1 @@
+USAGE: Drag and drop your IL file onto the executable of compilertools and it will add some debug Console.WriteLine
